@@ -14,10 +14,10 @@ class ofHttpRequest{
 public:
 	ofHttpRequest(){};
 
-	ofHttpRequest(string url,string name,bool saveTo=false)
-	:url(url)
-	,name(name)
-	,saveTo(saveTo)
+	ofHttpRequest(string seturl,string setname,bool setsaveTo=false)
+	:url(seturl)
+	,name(setname)
+	,saveTo(setsaveTo)
 	,id(nextID++){}
 
 	string				url;
@@ -34,16 +34,16 @@ class ofHttpResponse{
 public:
 	ofHttpResponse(){}
 
-	ofHttpResponse(ofHttpRequest request,const ofBuffer & data,int status, string error)
-	:request(request)
-	,data(data)
-	,status(status)
-	,error(error){}
+	ofHttpResponse(ofHttpRequest setrequest,const ofBuffer & setdata,int setstatus, string seterror)
+	:request(setrequest)
+	,data(setdata)
+	,status(setstatus)
+	,error(seterror){}
 
-	ofHttpResponse(ofHttpRequest request,int status,string error)
-	:request(request)
-	,status(status)
-	,error(error){}
+	ofHttpResponse(ofHttpRequest setrequest,int setstatus,string seterror)
+	:request(setrequest)
+	,status(setstatus)
+	,error(seterror){}
 
 	operator ofBuffer&(){
 		return data;

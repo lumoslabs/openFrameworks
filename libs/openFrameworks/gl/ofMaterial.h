@@ -17,6 +17,7 @@
 
 class ofMaterial {
 public:
+    virtual ~ofMaterial();
 	ofMaterial();
 	
 	// set colors

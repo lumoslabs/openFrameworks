@@ -22,11 +22,11 @@ public:
 	virtual void draw() {};
 	virtual void exit() {};
 
-	virtual void touchDown(int x, int y, int id) {};
-	virtual void touchMoved(int x, int y, int id) {};
-	virtual void touchUp(int x, int y, int id) {};
-	virtual void touchDoubleTap(int x, int y, int id) {};
-	virtual void touchCancelled(int x, int y, int id) {};
+	virtual void touchDown(float x, float y, int id) {};
+	virtual void touchMoved(float x, float y, int id) {};
+	virtual void touchUp(float x, float y, int id) {};
+	virtual void touchDoubleTap(float x, float y, int id) {};
+	virtual void touchCancelled(float x, float y, int id) {};
 	
 	virtual void lostFocus() {}
 	virtual void gotFocus() {}

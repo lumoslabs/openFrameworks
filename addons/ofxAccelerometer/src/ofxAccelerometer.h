@@ -74,12 +74,12 @@ public:
 	
 	
 	// set amount of smoothing on data (0: no smooth, 1:very smooth)
-	void setForceSmoothing(float forceSmoothing) {
-		this->forceSmoothing = forceSmoothing;
+	void setForceSmoothing(float setforceSmoothing) {
+		this->forceSmoothing = setforceSmoothing;
 	}
 	
-	void setOrientationSmoothing(float orientationSmoothing) {
-		this->orientationSmoothing = orientationSmoothing;
+	void setOrientationSmoothing(float setorientationSmoothing) {
+		this->orientationSmoothing = setorientationSmoothing;
 	}
 	
 	
@@ -98,7 +98,7 @@ public:
 		if(forceSmoothing) {
 			float lerpFactor = 1 - forceSmoothing;	
 			if(lerpFactor>1) lerpFactor = 1;
-			else if(lerpFactor < 0.01) lerpFactor = 0.01;
+			else if(lerpFactor < 0.01f) lerpFactor = 0.01f;
 			
 			accelForce += (accelReal - accelForce) * lerpFactor;
 		} else {
@@ -108,7 +108,7 @@ public:
 		if(orientationSmoothing) {
 			float lerpFactor = 1 - orientationSmoothing;	
 			if(lerpFactor>1) lerpFactor = 1;
-			else if(lerpFactor < 0.01) lerpFactor = 0.01;
+			else if(lerpFactor < 0.01f) lerpFactor = 0.01f;
 			
 			accelOrientation += (accelReal - accelOrientation) * lerpFactor;
 		} else {

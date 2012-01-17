@@ -78,7 +78,7 @@ public:
 	// optionally pass a pointer to/address of an unsigned int to get the index of the closest vertex
 	ofPoint getClosestPoint(const ofPoint& target, unsigned int* nearestIndex = NULL);
 
-	void simplify(float tolerance=0.3);
+	void simplify(float tolerance=0.3f);
 
 	/// points vector access
 	size_t size() const;

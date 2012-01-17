@@ -21,6 +21,7 @@
 class canLoadPixels
 {
 public:
+    virtual ~canLoadPixels(){};
 	virtual void loadPixels() = 0;
 };
 

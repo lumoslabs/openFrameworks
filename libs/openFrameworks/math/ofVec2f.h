@@ -37,13 +37,13 @@ public:
     //
     bool operator==( const ofVec2f& vec ) const;
     bool operator!=( const ofVec2f& vec ) const;
-    bool match( const ofVec2f& vec, float tollerance=0.0001 ) const;
+    bool match( const ofVec2f& vec, float tollerance=0.0001f ) const;
     /**
 	 * Checks if vectors look in the same direction.
 	 * Tollerance is specified in degree.
 	 */
-    bool align( const ofVec2f& vec, float tollerance=0.0001 ) const;
-    bool alignRad( const ofVec2f& vec, float tollerance=0.0001 ) const;
+    bool align( const ofVec2f& vec, float tollerance=0.0001f ) const;
+    bool alignRad( const ofVec2f& vec, float tollerance=0.0001f ) const;
 	
 	
     // Overloading for any type to any type

@@ -5,6 +5,7 @@
  Contains core functionality for iPhone / iPod Touch
  Any .cpp files that include this needs to be renamed to .mm (to support Objective C++)
 
+ ***********************************************************************/ 
  
  /***********************************************************************
  

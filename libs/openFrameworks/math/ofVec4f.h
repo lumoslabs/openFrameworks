@@ -38,7 +38,7 @@ public:
     //
     bool operator==( const ofVec4f& vec ) const;
     bool operator!=( const ofVec4f& vec ) const;
-    bool match( const ofVec4f& vec, float tollerance=0.0001) const;
+    bool match( const ofVec4f& vec, float tollerance=0.0001f) const;
 	
 	
     // Additions and Subtractions.
