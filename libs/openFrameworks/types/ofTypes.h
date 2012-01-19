@@ -150,3 +150,82 @@ public:
 		ofPtr(std::tr1::unique_ptr<Tp1, Del>&& __r)
 	: std::tr1::shared_ptr<T>(std::move(__r)) { }*/
 };
+
+//----------------------------------------------------------
+// ofPtrWeak
+//----------------------------------------------------------
+template <typename T>
+class ofPtrWeak: public std::tr1::weak_ptr<T>
+{
+public:
+    
+	ofPtrWeak()
+    : std::tr1::weak_ptr<T>() { }
+    
+    template<typename Tp1>
+    explicit
+    ofPtrWeak(Tp1* __p)
+	: std::tr1::weak_ptr<T>(__p) { }
+    
+    template<typename Tp1, typename _Deleter>
+    ofPtrWeak(Tp1* __p, _Deleter __d)
+	: std::tr1::weak_ptr<T>(__p, __d) { }
+    
+    template<typename Tp1, typename _Deleter, typename _Alloc>
+    ofPtrWeak(Tp1* __p, _Deleter __d, const _Alloc& __a)
+	: std::tr1::weak_ptr<T>(__p, __d, __a) { }
+    
+    // Aliasing constructor
+    template<typename Tp1>
+    ofPtrWeak(const ofPtrWeak<Tp1>& __r, T* __p)
+	: std::tr1::weak_ptr<T>(__r, __p) { }
+    
+    template<typename Tp1>
+    ofPtrWeak(const ofPtrWeak<Tp1>& __r)
+	: std::tr1::weak_ptr<T>(__r) { }
+    
+    template<typename Tp1>
+    ofPtrWeak(const ofPtr<Tp1>& __r)
+    : std::tr1::weak_ptr<T>(__r) { }
+    
+    /*ofPtrWeak(ofPtrWeak&& __r)
+     : std::tr1::shared_ptr<T>(std::move(__r)) { }
+     
+     template<typename Tp1>
+     ofPtrWeak(ofPtrWeak<Tp1>&& __r)
+     : std::tr1::shared_ptr<T>(std::move(__r)) { }*/
+    
+    template<typename Tp1>
+    explicit
+    ofPtrWeak(const std::tr1::shared_ptr<Tp1>& __r)
+	: std::tr1::weak_ptr<T>(__r) { }
+    
+    /*template<typename Tp1, typename Del>
+     explicit
+     ofPtrWeak(const std::tr1::unique_ptr<Tp1, Del>&) = delete;
+     
+     template<typename Tp1, typename Del>
+     explicit
+     ofPtrWeak(std::tr1::unique_ptr<Tp1, Del>&& __r)
+     : std::tr1::weak_ptr<T>(std::move(__r)) { }*/
+    
+    
+    ofPtr<T> 
+    lock() const
+    {
+        return this->expired() ? ofPtr<T>()
+        : ofPtr<T>(*this);
+    }
+
+    // Implicit conversion to "bool"
+    operator bool() const
+    { return this->expired() ? 0 : 1; }
+/*private:
+    template<typename Tp1>
+    typedef Tp1* ofPtrWeak::*__unspecified_bool_type;
+    
+public:
+    operator __unspecified_bool_type() const
+    { return this->expired() ? 0 : 1; }
+ */
+};
