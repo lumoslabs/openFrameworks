@@ -149,7 +149,54 @@ public:
 		explicit
 		ofPtr(std::tr1::unique_ptr<Tp1, Del>&& __r)
 	: std::tr1::shared_ptr<T>(std::move(__r)) { }*/
+    
+    template<typename Tp1>
+    ofPtr(const ofPtr<Tp1>& __r, std::tr1::__static_cast_tag)
+    : std::tr1::shared_ptr<T>(__r, std::tr1::__static_cast_tag()) { }
+    
+    template<typename Tp1>
+    ofPtr(const ofPtr<Tp1>& __r, std::tr1::__const_cast_tag)
+    : std::tr1::shared_ptr<T>(__r, std::tr1::__const_cast_tag()) { }
+    
+    template<typename Tp1>
+    ofPtr(const ofPtr<Tp1>& __r, std::tr1::__dynamic_cast_tag)
+    : std::tr1::shared_ptr<T>(__r, std::tr1::__dynamic_cast_tag()) { }
+    
+    
+/*    template<typename Tp, typename Tp1>
+    ofPtr<Tp>
+    static_pointer_cast(const ofPtr<Tp1>& __r)
+    { return ofPtr<Tp>(__r, std::tr1::__static_cast_tag()); }
+    
+    template<typename Tp, typename Tp1>
+    ofPtr<Tp>
+    const_pointer_cast(const ofPtr<Tp1>& __r)
+    { return ofPtr<Tp>(__r, std::tr1::__const_cast_tag()); }
+    
+    template<typename Tp, typename Tp1>
+    ofPtr<Tp>
+    dynamic_pointer_cast(const ofPtr<Tp1>& __r)
+    { return ofPtr<Tp>(__r, std::tr1::__dynamic_cast_tag()); }*/
 };
+
+
+template< typename Tp, typename Tp1 >
+ofPtr< Tp > static_pointer_cast(const ofPtr< Tp1 >& __r)
+{ 
+    return ofPtr< Tp >( __r, std::tr1::__static_cast_tag() ); 
+}
+
+template< typename _Tp, typename _Tp1 >
+ofPtr< _Tp > const_pointer_cast( const ofPtr< _Tp1 >& __r )
+{ 
+    return ofPtr< _Tp >( __r, std::tr1::__const_cast_tag() ); 
+}
+
+template< typename _Tp, typename _Tp1 >
+ofPtr< _Tp > dynamic_pointer_cast( const ofPtr< _Tp1 >& __r )
+{ 
+    return ofPtr< _Tp >( __r, std::tr1::__dynamic_cast_tag() ); 
+}
 
 //----------------------------------------------------------
 // ofPtrWeak
