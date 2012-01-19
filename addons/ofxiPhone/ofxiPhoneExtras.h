@@ -190,6 +190,14 @@ NSString * ofxStringToNSString(string s);
 // It returns the path to the folder which your app has read/write access to.
 string ofxiPhoneGetDocumentsDirectory();
 
+// utility functions for converting ofColors and UIColors back and forth
+UIColor* ofColorToUIColor( const ofColor& from );
+ofColor UIColorToofColor( UIColor* from );
+
+// utility functions for converting ofRectangles and CGRects back and forth
+CGRect ofRectangleToCGRect( const ofRectangle& from );
+ofRectangle CGRectToofRectangle( const CGRect& from );
+
 //-------------------------------------------------------------------------------
 // backwards compatibility
 //
