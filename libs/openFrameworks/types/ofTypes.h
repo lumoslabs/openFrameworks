@@ -276,3 +276,21 @@ public:
     { return this->expired() ? 0 : 1; }
  */
 };
+
+template< typename Tp, typename Tp1 >
+ofPtr< Tp > static_pointer_cast(const ofPtrWeak< Tp1 >& __r)
+{ 
+    return ofPtr< Tp >( __r.lock(), std::tr1::__static_cast_tag() ); 
+}
+
+template< typename _Tp, typename _Tp1 >
+ofPtr< _Tp > const_pointer_cast( const ofPtrWeak< _Tp1 >& __r )
+{ 
+    return ofPtr< _Tp >( __r.lock(), std::tr1::__const_cast_tag() ); 
+}
+
+template< typename _Tp, typename _Tp1 >
+ofPtr< _Tp > dynamic_pointer_cast( const ofPtrWeak< _Tp1 >& __r )
+{ 
+    return ofPtr< _Tp >( __r.lock(), std::tr1::__dynamic_cast_tag() ); 
+}
