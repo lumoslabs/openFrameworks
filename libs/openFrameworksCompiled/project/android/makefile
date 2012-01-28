@@ -66,10 +66,11 @@ endif
 
 SOURCE_DIRS = $(shell find ../../../openFrameworks -maxdepth 1 -mindepth 1 -type d )
 ifeq ($(ARCH),android)
-	SOURCES = $(shell find $(SOURCE_DIRS) -name "*.cpp" | grep -v "ofAppGlutWindow.cpp" | grep -v ofGstVideoPlayer.cpp | grep -v ofQuickTimeGrabber.cpp | grep -v ofVideoPlayer.cpp | grep -v ofGstVideoGrabber.cpp | grep -v ofSoundPlayer.cpp | grep -v ofOpenALSoundPlayer.cpp)
-else
-	SOURCES = $(shell find $(SOURCE_DIRS) -name "*.cpp") 
+	# don't include files that are pretty much not Android happy
+	SOURCE_FILTERS = "ofAppGlutWindow.cpp" ofGstVideoPlayer.cpp ofQuickTimeGrabber.cpp ofVideoPlayer.cpp ofGstVideoGrabber.cpp ofSoundPlayer.cpp ofOpenALSoundPlayer.cpp
 endif
+SOURCES = $(shell find $(SOURCE_DIRS) -name "*.cpp" $(addprefix | grep -v ,$(SOURCE_FILTERS)))
+
 OBJFILES = $(patsubst ../../../%.cpp,%.o,$(SOURCES))
 CORE_INCLUDES = $(shell find ../../../openFrameworks/ -type d)
 CORE_INCLUDE_FLAGS = $(addprefix -I,$(CORE_INCLUDES))
