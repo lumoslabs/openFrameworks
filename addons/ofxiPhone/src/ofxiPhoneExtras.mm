@@ -388,7 +388,10 @@ bool ofxiPhoneCGImageToPixels(CGImageRef & ref, unsigned char * pixels){
 //--------------------------------------------------------------
 
 string ofxNSStringToString(NSString * s) {
-	return string([s UTF8String]);
+    const char*stringBuffer = [s UTF8String];
+    if ( stringBuffer && strlen( stringBuffer ) > 0 )
+        return string( stringBuffer );
+    return string();
 }
 
 //--------------------------------------------------------------
