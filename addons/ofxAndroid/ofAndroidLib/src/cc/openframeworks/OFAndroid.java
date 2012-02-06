@@ -20,7 +20,6 @@ import android.content.pm.ActivityInfo;
 import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.opengl.ETC1Util;
 import android.opengl.GLSurfaceView;
 import android.os.Environment;
 import android.os.PowerManager;
@@ -237,7 +236,7 @@ public class OFAndroid {
 			public void run() {
 				try {
 					Class<?> menu_ids = Class.forName(packageName+".R$id");
-					Field field = menu_ids.getField(id);
+					/*Field field =*/ menu_ids.getField(id); // TODO: fix
 					//ofActivity.getMenuInflater().
 				} catch (Exception e) {
 					Log.w("OF","Trying to get menu items ", e);
@@ -522,6 +521,7 @@ public class OFAndroid {
 	 
     static {
     	try{
+    		System.loadLibrary("stlport_shared");
     		System.loadLibrary("neondetection"); 
 	    	if(hasNeon()){
 	    		Log.i("OF","loading neon optimized library");

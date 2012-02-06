@@ -202,6 +202,7 @@ jint JNI_OnLoad(JavaVM* vm, void* reserved)
 {
 	JNIEnv *env;
 	ofJavaVM = vm;
+	printf( "ofAppAndroidWindow.cpp: JNI_OnLoad Called" );
 	ofLog(OF_LOG_NOTICE,"JNI_OnLoad called");
 	if (vm->GetEnv((void**) &env, JNI_VERSION_1_4) != JNI_OK) {
 		ofLog(OF_LOG_ERROR,"Failed to get the environment using GetEnv()");
