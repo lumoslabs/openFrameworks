@@ -5,7 +5,7 @@
 #include "ofBaseApp.h"
 #include "ofTypes.h"
 #include "ofBaseSoundStream.h"
-
+/*
 #ifdef OF_SOUNDSTREAM_RTAUDIO
 	#include "ofRtAudioSoundStream.h"
 	#define OF_SOUND_STREAM_TYPE ofRtAudioSoundStream
@@ -19,7 +19,7 @@
 	#include "ofxiPhoneSoundStream.h"
 	#define OF_SOUND_STREAM_TYPE ofxiPhoneSoundStream
 #endif 
-
+*/
 void ofSoundStreamSetup(int nOutputChannels, int nInputChannels, ofBaseApp * appPtr = NULL);
 void ofSoundStreamSetup(int nOutputChannels, int nInputChannels, int sampleRate, int bufferSize, int nBuffers);
 void ofSoundStreamSetup(int nOutputChannels, int nInputChannels, ofBaseApp * appPtr, int sampleRate, int bufferSize, int nBuffers);

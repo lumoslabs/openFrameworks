@@ -93,10 +93,10 @@ static string gtkFileDialog(GtkFileChooserAction action,string windowTitle,strin
 }
 
 #endif
-#ifdef TARGET_ANDROID
+/*#ifdef TARGET_ANDROID
 #include "ofxAndroidUtils.h"
 #endif
-
+*/
 //------------------------------------------------------------------------------
 ofFileDialogResult::ofFileDialogResult(){
 	filePath = "";
@@ -149,10 +149,10 @@ void ofSystemAlertDialog(string errorMessage){
 		gtk_dialog_run (GTK_DIALOG (dialog));
 		startGTK(dialog);
 	#endif
-
+/*
 	#ifdef TARGET_ANDROID
 		ofxAndroidAlertBox(errorMessage);
-	#endif
+	#endif*/
 }
 
 

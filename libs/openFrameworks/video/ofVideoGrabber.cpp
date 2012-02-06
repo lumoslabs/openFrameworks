@@ -48,11 +48,11 @@ ofPtr<ofBaseVideoGrabber> ofVideoGrabber::getGrabber(){
 bool ofVideoGrabber::initGrabber(int w, int h, bool setUseTexture){
 
 #ifndef OF_VID_GRABBER_TYPE
-#error OF_VID_GRABBER_TYPE is not #defined! 
+//#error OF_VID_GRABBER_TYPE is not #defined!
 #endif
     
 	if( grabber == NULL ){
-		setGrabber( ofPtr<OF_VID_GRABBER_TYPE>(new OF_VID_GRABBER_TYPE) );
+//		setGrabber( ofPtr<OF_VID_GRABBER_TYPE>(new OF_VID_GRABBER_TYPE) );
 	}
 
 	bInitialized = true;

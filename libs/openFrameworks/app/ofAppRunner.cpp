@@ -27,16 +27,7 @@ int							width, height;
 
 static ofPtr<ofAppBaseWindow> window;
 
-
-//========================================================================
-// default windowing
-#ifdef TARGET_OF_IPHONE
-	#include "ofAppiPhoneWindow.h"
-#elif defined TARGET_ANDROID
-	#include "ofAppAndroidWindow.h"
-#else
-	#include "ofAppGlutWindow.h"
-#endif
+#include "ofAppBaseWindow.h"
 
 // this is hacky only to provide bw compatibility, a shared_ptr should always be initialized using a shared_ptr
 // it shouldn't be a problem since it's only called from main and never deleted from outside
@@ -101,7 +92,7 @@ void ofSetupOpenGL(ofPtr<ofAppBaseWindow> windowPtr, int w, int h, int screenMod
 	//ofSetupGraphicDefaults();
 }
 
-
+/*
 //--------------------------------------
 void ofSetupOpenGL(int w, int h, int screenMode){
 	#ifdef TARGET_OF_IPHONE
@@ -114,7 +105,7 @@ void ofSetupOpenGL(int w, int h, int screenMode){
 
 	ofSetupOpenGL(window,w,h,screenMode);
 }
-
+*/
 //----------------------- 	gets called when the app exits
 // 							currently looking at who to turn off
 //							at the end of the application

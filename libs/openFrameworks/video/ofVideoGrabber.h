@@ -26,12 +26,12 @@
 	#include "ofGstVideoGrabber.h"
 	#define OF_VID_GRABBER_TYPE ofGstVideoGrabber
 #endif
-
+/*
 #ifdef OF_VIDEO_CAPTURE_ANDROID
 	#include "ofxAndroidVideoGrabber.h"
 	#define OF_VID_GRABBER_TYPE ofxAndroidVideoGrabber
 #endif
-
+*/
 class ofVideoGrabber : public ofBaseVideoGrabber,public ofBaseVideoDraws{
 
 	public :
