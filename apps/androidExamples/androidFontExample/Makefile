@@ -24,6 +24,8 @@
 #
 # edit the following  vars to customize the makefile
 
+DUMP_VAR     := $(patsubst DUMP_%,%,$(filter DUMP_%,$(MAKECMDGOALS)))
+
 include config.make
 
 ifeq ($(findstring Android,$(MAKECMDGOALS)),Android)
@@ -80,7 +82,9 @@ endif
 
 NODEPS = clean
 SED_EXCLUDE_FROM_SRC = $(shell echo  $(EXCLUDE_FROM_SOURCE) | sed s/\,/\\\\\|/g)
-SOURCE_DIRS = $(shell find . -maxdepth 1 -mindepth 1 -type d | grep -v $(SED_EXCLUDE_FROM_SRC) | sed s/.\\///)
+SOURCE_DIRS = \
+ $(shell find . -maxdepth 1 -mindepth 1 -type d | grep -v $(SED_EXCLUDE_FROM_SRC) | sed s/.\\///) \
+ ../../../addons/ofxAndroid/src/
 SOURCES = $(shell find $(SOURCE_DIRS) -name "*.cpp" -or -name "*.c" -or -name "*.cc")
 OBJFILES = $(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(patsubst %.cc,%.o,$(SOURCES))))
 
@@ -147,11 +151,12 @@ ifeq ($(findstring addons.make,$(wildcard *.make)),addons.make)
 	    ADDONS_REL_DIRS = $(addsuffix /src, $(ADDONS))
 	    ADDONS_LIBS_REL_DIRS = $(addsuffix /libs, $(ADDONS))
 	    ADDONS_DIRS = $(addprefix $(OF_ROOT)/addons/, $(ADDONS_REL_DIRS) )
+	    ADDONS_JNI_DIRS1 = $(addprefix $(OF_ROOT)/addons/, $(ADDONS_JNI_DIRS) )
 	    ADDONS_LIBS_DIRS = $(addprefix $(OF_ROOT)/addons/, $(ADDONS_LIBS_REL_DIRS) )
 	    ADDONS_BIN_LIBS_DIRS = $(addsuffix /*/lib/$(LIBSPATH), $(ADDONS_LIBS_DIRS) )
 	
 	    ADDONS_INCLUDES = $(ADDONS_DIRS)
-	    ADDONS_INCLUDES = $(ADDONS_LIBS_DIRS)
+	    ADDONS_INCLUDES += $(ADDONS_LIBS_DIRS)
 	    ADDONS_INCLUDES += $(shell find $(ADDONS_DIRS) -type d 2> /dev/null)
 	    ADDONS_INCLUDES += $(shell find $(ADDONS_LIBS_DIRS) -type d 2> /dev/null)
 	    ADDONSCFLAGS = $(addprefix -I,$(ADDONS_INCLUDES))
@@ -172,6 +177,7 @@ ifeq ($(findstring addons.make,$(wildcard *.make)),addons.make)
 
 
 	    ADDONS_SOURCES = $(shell find $(ADDONS_DIRS) -name "*.cpp" -or -name "*.c" 2> /dev/null)
+	    ADDONS_SOURCES += $(shell find $(ADDONS_JNI_DIRS1) -name "*.cpp" -or -name ".c" -or -name "*.cc" 2>/dev/null)
 	    ADDONS_SOURCES += $(shell find $(ADDONS_LIBS_DIRS) -name "*.cpp" -or -name "*.c" -or -name "*.cc" 2>/dev/null)
 	    ADDONS_OBJFILES = $(subst $(OF_ROOT)/, ,$(patsubst %.cc,%.o,$(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(ADDONS_SOURCES)))))
 	endif
@@ -267,6 +273,9 @@ ifeq ($(findstring addons.make,$(wildcard *.make)),addons.make)
 	ADDONS_OBJS = $(addprefix $(OBJ_OUTPUT), $(ADDONS_OBJFILES))
     DEPFILES += $(patsubst %.o,%.d,$(ADDONS_OBJS))
 endif
+
+DUMP_$(DUMP_VAR):
+	@echo $($(DUMP_VAR))
 
 .PHONY: Debug Release all after afterDebugAndroid afterReleaseAndroid
 

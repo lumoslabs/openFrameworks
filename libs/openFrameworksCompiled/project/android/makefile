@@ -62,6 +62,7 @@ else
 	CFLAGS += -nostdlib --sysroot=$(SYSROOT) -fno-short-enums 
 	CFLAGS += -I"$(NDK_ROOT)/platforms/$(NDK_PLATFORM)/arch-arm/usr/include" -I"$(NDK_ROOT)/sources/cxx-stl/gnu-libstdc++/include/" -I"$(NDK_ROOT)/sources/cxx-stl/gnu-libstdc++/libs/armeabi/include"
 	CFLAGS += -DANDROID
+	CFLAGS += -DGL_GLEXT_PROTOTYPES
 endif
 
 SOURCE_DIRS = $(shell find ../../../openFrameworks -maxdepth 1 -mindepth 1 -type d )
@@ -79,7 +80,7 @@ INCLUDES_FLAGS = $(addprefix -I,$(INCLUDES))
 INCLUDES_FLAGS += -I../../../poco/include
 ifeq ($(ARCH),android)
 	INCLUDES_FLAGS += -I../../../glu/include_android
- 	INCLUDES_FLAGS += -I../../../../addons/ofxAndroid/src
+# 	INCLUDES_FLAGS += -I../../../../addons/ofxAndroid/src
 else
  	INCLUDES_FLAGS += -I../../../glu/include
 endif

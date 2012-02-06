@@ -3,7 +3,6 @@
 	<name>openFrameworks</name>
 	<comment></comment>
 	<projects>
-		<project>addons</project>
 		<project>libs</project>
 	</projects>
 	<buildSpec>
@@ -33,7 +32,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
-					<value>clean</value>
+					<value>CleanAndroid -C../openFrameworksCompiled/project/android</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.contents</key>
@@ -53,7 +52,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.fullBuildTarget</key>
-					<value>all</value>
+					<value>android -C../openFrameworksCompiled/project/android</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.stopOnError</key>
@@ -61,7 +60,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
-					<value>false</value>
+					<value>true</value>
 				</dictionary>
 			</arguments>
 		</buildCommand>
@@ -78,4 +77,11 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>project</name>
+			<type>2</type>
+			<location>/Users/ian/Documents/LumosityMobile/libs/openFrameworks/libs/openFrameworksCompiled/project/android</location>
+		</link>
+	</linkedResources>
 </projectDescription>

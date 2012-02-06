@@ -19,6 +19,7 @@ public class OFActivity extends Activity{
         ofApp = new OFAndroid(packageName,this);
     }
 	
+	
 	@Override
 	public void onDetachedFromWindow() {
 	}
@@ -84,7 +85,6 @@ public class OFActivity extends Activity{
     	//  you can add or remove menu options from here
     	return  super.onPrepareOptionsMenu(menu);
     }
-	
 }
 
 

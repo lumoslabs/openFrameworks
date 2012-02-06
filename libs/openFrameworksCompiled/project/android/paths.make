@@ -1,4 +1,5 @@
-NDK_ROOT=/home/arturo/Descargas/android-ndk-r5b
-SDK_ROOT=/home/arturo/Descargas/android-sdk-linux_86
+NDK_ROOT=/Developer/SDKs/android-ndk
+SDK_ROOT=/Developer/SDKs/android-sdk
+ANDROID_PLATFORM=android-8
 ANT_HOME=/usr
 ANT_BIN=$(ANT_HOME)/bin/
