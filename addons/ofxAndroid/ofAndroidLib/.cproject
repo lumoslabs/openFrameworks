@@ -28,9 +28,11 @@
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.173980141" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool id="com.android.tool.compiler.g++.1261574510" name="Android G++" superClass="com.android.tool.compiler.g++">
 								<option id="gnu.cpp.compiler.option.include.paths.441462032" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ofxGeneric/src}&quot;"/>
 									<listOptionValue builtIn="false" value="/Users/ian/Documents/LumosityMobile/libs/openFrameworks/libs/openFrameworks"/>
 									<listOptionValue builtIn="false" value="/Users/ian/Documents/LumosityMobile/libs/openFrameworks/addons/ofxAndroid/libs/miniunzip"/>
 									<listOptionValue builtIn="false" value="/Users/ian/Documents/LumosityMobile/libs/openFrameworks/addons/ofxAccelerometer/src"/>
+									<listOptionValue builtIn="false" value="/Developer/SDKs/android-ndk-new/platforms/android-8/arch-arm/usr/include"/>
 								</option>
 								<inputType id="com.android.tool.compiler.g++.input.964089316" superClass="com.android.tool.compiler.g++.input"/>
 							</tool>
@@ -90,9 +92,11 @@
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.635382695" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool id="com.android.tool.compiler.g++.1353457336" name="Android G++" superClass="com.android.tool.compiler.g++">
 								<option id="gnu.cpp.compiler.option.include.paths.77279893" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ofxGeneric/src}&quot;"/>
 									<listOptionValue builtIn="false" value="/Users/ian/Documents/LumosityMobile/libs/openFrameworks/libs/openFrameworks"/>
 									<listOptionValue builtIn="false" value="/Users/ian/Documents/LumosityMobile/libs/openFrameworks/addons/ofxAndroid/libs/miniunzip"/>
 									<listOptionValue builtIn="false" value="/Users/ian/Documents/LumosityMobile/libs/openFrameworks/addons/ofxAccelerometer/src"/>
+									<listOptionValue builtIn="false" value="/Developer/SDKs/android-ndk-new/platforms/android-8/arch-arm/usr/include"/>
 								</option>
 								<inputType id="com.android.tool.compiler.g++.input.354777355" superClass="com.android.tool.compiler.g++.input"/>
 							</tool>
