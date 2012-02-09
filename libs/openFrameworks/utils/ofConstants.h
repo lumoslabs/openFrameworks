@@ -29,7 +29,9 @@ enum ofLoopType{
 		#define TARGET_OSX
 	#endif
 #elif defined (ANDROID)
+	#ifndef TARGET_ANDROID
 	#define TARGET_ANDROID
+	#endif
 	#define TARGET_OPENGLES
 #else
 	#define TARGET_LINUX
