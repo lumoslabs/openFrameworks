@@ -10,12 +10,7 @@ static map<string,ofLogLevel> & getModules(){
 }
 
 static void noopDeleter(ofBaseLoggerChannel*){}
-/*#ifdef TARGET_ANDROID
-	#include "ofxAndroidLogChannel.h"
-	ofPtr<ofBaseLoggerChannel> ofLog::channel = ofPtr<ofxAndroidLogChannel>(new ofxAndroidLogChannel,std::ptr_fun(noopDeleter));
-#else*/
-	ofPtr<ofBaseLoggerChannel> ofLog::channel = ofPtr<ofConsoleLoggerChannel>(new ofConsoleLoggerChannel,std::ptr_fun(noopDeleter));
-//#endif
+ofPtr<ofBaseLoggerChannel> ofLog::channel = ofPtr<ofConsoleLoggerChannel>(new ofConsoleLoggerChannel,std::ptr_fun(noopDeleter));
 
 //--------------------------------------------------
 void ofSetLogLevel(ofLogLevel logLevel){
