@@ -63,6 +63,8 @@ class ofLog{
 		/// the legacy ofLog interfaces
 		ofLog(ofLogLevel logLevel, const string & message);
 		ofLog(ofLogLevel logLevel, const char* format, ...);
+		ofLog(const string & module, ofLogLevel logLevel, const string & message);
+		ofLog(const string & module, ofLogLevel logLevel, const char* format, ...);
 
         /// does the actual printing when the ostream is done
         virtual ~ofLog();

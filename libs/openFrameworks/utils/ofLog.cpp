@@ -68,6 +68,23 @@ ofLog::ofLog(ofLogLevel logLevel, const char* format, ...){
 	bPrinted = true;
 }
 
+//--------------------------------------------------
+ofLog::ofLog(const string & module, ofLogLevel logLevel, const string & message){
+	_log(logLevel,module,message);
+	bPrinted = true;
+}
+
+//--------------------------------------------------
+ofLog::ofLog(const string & module, ofLogLevel logLevel, const char* format, ...){
+	if(checkLog(logLevel,module)){
+		va_list args;
+		va_start( args, format );
+		channel->log(logLevel,module,format,args);
+		va_end( args );
+	}
+	bPrinted = true;
+}
+
 //-------------------------------------------------------
 ofLog::~ofLog(){
 	// don't log if we printed in the constructor already
