@@ -582,7 +582,7 @@ string ofVAArgsToString(const char * format, va_list args){
 	if (NULL != format){
 
 		// Get formatted string length adding one for NULL
-		vsprintf(aux_buffer, format, args);
+		vsnprintf(aux_buffer, 10000, format, args);
 		retStr = aux_buffer;
 
 	}
