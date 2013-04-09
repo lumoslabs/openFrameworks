@@ -96,7 +96,7 @@ public:
 		
 		accelReal.set(x, y, z);
 		
-		if(forceSmoothing) {
+		if((bool)forceSmoothing) {
 			float lerpFactor = 1 - forceSmoothing;	
 			if(lerpFactor>1) lerpFactor = 1;
 			else if(lerpFactor < 0.01) lerpFactor = 0.01;
@@ -106,7 +106,7 @@ public:
 			accelForce.set(x, y, z);
 		}
 		
-		if(orientationSmoothing) {
+		if((bool)orientationSmoothing) {
 			float lerpFactor = 1 - orientationSmoothing;	
 			if(lerpFactor>1) lerpFactor = 1;
 			else if(lerpFactor < 0.01) lerpFactor = 0.01;
