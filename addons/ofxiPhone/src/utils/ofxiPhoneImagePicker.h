@@ -94,7 +94,7 @@ class ofxiPhoneImagePicker : public canLoadPixels
 public:
 	
 	ofxiPhoneImagePicker();
-	~ofxiPhoneImagePicker();
+	virtual ~ofxiPhoneImagePicker();
 	
 	bool openCamera(int camera=0); // 0 for rear, 1 for front
 	bool openLibrary();
