@@ -107,7 +107,7 @@ public:
     bool inside(float x, float y);
     bool inside(const ofPoint & p);
 
-	void simplify(float tolerance=0.3);
+	void simplify(float tolerance=0.3f);
 
 	/// points vector access
 	size_t size() const;

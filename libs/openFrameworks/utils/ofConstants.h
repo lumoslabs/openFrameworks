@@ -317,31 +317,31 @@ typedef ofBaseApp ofSimpleApp;
 using namespace std;
 
 #ifndef PI
-	#define PI       3.14159265358979323846
+	#define PI       3.14159265358979323846f
 #endif
 
 #ifndef TWO_PI
-	#define TWO_PI   6.28318530717958647693
+	#define TWO_PI   6.28318530717958647693f
 #endif
 
 #ifndef M_TWO_PI
-	#define M_TWO_PI   6.28318530717958647693
+	#define M_TWO_PI   6.28318530717958647693f
 #endif
 
 #ifndef FOUR_PI
-	#define FOUR_PI 12.56637061435917295385
+	#define FOUR_PI 12.56637061435917295385f
 #endif
 
 #ifndef HALF_PI
-	#define HALF_PI  1.57079632679489661923
+	#define HALF_PI  1.57079632679489661923f
 #endif
 
 #ifndef DEG_TO_RAD
-	#define DEG_TO_RAD (PI/180.0)
+	#define DEG_TO_RAD (PI/180.0f)
 #endif
 
 #ifndef RAD_TO_DEG
-	#define RAD_TO_DEG (180.0/PI)
+	#define RAD_TO_DEG (180.0f/PI)
 #endif
 
 #ifndef MIN
