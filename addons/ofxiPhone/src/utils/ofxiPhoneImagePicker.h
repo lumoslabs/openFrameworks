@@ -22,6 +22,7 @@ class canLoadPixels
 {
 public:
 	virtual void loadPixels() = 0;
+    virtual ~canLoadPixels() {};
 };
 
 //----------------------------------------------------------- overlay.

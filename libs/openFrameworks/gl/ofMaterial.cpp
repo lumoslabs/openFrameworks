@@ -10,6 +10,9 @@ ofMaterial::ofMaterial() {
     shininess = 0.2;
 }
 
+ofMaterial::~ofMaterial() {
+}
+
 void ofMaterial::setColors(ofFloatColor oDiffuse, ofFloatColor oAmbient, ofFloatColor oSpecular, ofFloatColor oEmissive) {
 	setDiffuseColor(oDiffuse);
 	setAmbientColor(oAmbient);
