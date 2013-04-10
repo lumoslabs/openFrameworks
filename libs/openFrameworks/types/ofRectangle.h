@@ -211,6 +211,9 @@ public:
     bool operator == (const ofRectangle& rect) const;
     bool operator != (const ofRectangle& rect) const;
     
+    friend ostream& operator<<(ostream& os, const ofRectangle& rect);
+    friend istream& operator>>(istream& is, ofRectangle& rect);
+    
     ofPoint position;
     float& x;
     float& y;

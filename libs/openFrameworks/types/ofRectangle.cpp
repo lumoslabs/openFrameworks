@@ -686,3 +686,19 @@ bool ofRectangle::operator == (const ofRectangle& rect) const {
 	return (x == rect.x) && (y == rect.y) && (width == rect.width) && (height == rect.height);
 }
 
+//----------------------------------------------------------
+ostream& operator<<(ostream& os, const ofRectangle& rect) {
+    return os << "[ x:" << rect.x << " y: " << rect.y << " w: " << rect.width << " h: " << rect.height << " ]";
+}
+
+//----------------------------------------------------------
+istream& operator>>(istream& is, ofRectangle& rect) {
+	is >> rect.x;
+	is.ignore(2);
+	is >> rect.y;
+	is.ignore(2);
+	is >> rect.width;
+	is.ignore(2);
+	is >> rect.height;
+	return is;
+}
