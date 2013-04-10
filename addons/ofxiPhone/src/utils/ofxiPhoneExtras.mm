@@ -467,6 +467,14 @@ ofColor ofxUIColorToofColor(UIColor * from){
 	return to;
 }
 
+CGRect ofxRectangleToCGRect(const ofRectangle & from){
+	return CGRectMake(from.x, from.y, from.width, from.height);
+}
+
+ofRectangle ofxCGRectToofRectangle(const CGRect & from){
+	return ofRectangle(from.origin.x, from.origin.y, from.size.width, from.size.height);
+}
+
 /******************** ofxiPhoneScreenGrab *********************/
 
 @interface SaveDelegate : NSObject {

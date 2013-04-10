@@ -199,6 +199,10 @@ void ofxiPhoneLaunchBrowser(string url);
 UIColor * ofxColorToUIColor(const ofColor & from);
 ofColor ofxUIColorToofColor(UIColor * from);
 
+// utility functions for converting ofRectangles and CGRects back and forth
+CGRect ofxRectangleToCGRect(const ofRectangle & from);
+ofRectangle ofxCGRectToofRectangle(const CGRect & from);
+
 //-------------------------------------------------------------------------------
 // backwards compatibility
 //
