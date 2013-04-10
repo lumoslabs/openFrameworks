@@ -75,12 +75,12 @@ public:
 	
 	
 	// set amount of smoothing on data (0: no smooth, 1:very smooth)
-	void setForceSmoothing(float forceSmoothing) {
-		this->forceSmoothing = forceSmoothing;
+	void setForceSmoothing(float setForceSmoothing) {
+		forceSmoothing = setForceSmoothing;
 	}
 	
-	void setOrientationSmoothing(float orientationSmoothing) {
-		this->orientationSmoothing = orientationSmoothing;
+	void setOrientationSmoothing(float setOrientationSmoothing) {
+		orientationSmoothing = setOrientationSmoothing;
 	}
 	
 	
