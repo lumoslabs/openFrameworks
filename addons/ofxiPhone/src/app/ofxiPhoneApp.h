@@ -33,19 +33,19 @@ public:
 	virtual void gotMemoryWarning() {}
 
 	virtual void touchDown(ofTouchEventArgs & touch) {
-		touchDown(touch.x, touch.y, touch.id);
+		touchDown((int)touch.x, (int)touch.y, touch.id);
 	};
 	virtual void touchMoved(ofTouchEventArgs & touch) {
-		touchMoved(touch.x, touch.y, touch.id);
+		touchMoved((int)touch.x, (int)touch.y, touch.id);
 	};
 	virtual void touchUp(ofTouchEventArgs & touch) {
-		touchUp(touch.x, touch.y, touch.id);
+		touchUp((int)touch.x, (int)touch.y, touch.id);
 	};
 	virtual void touchDoubleTap(ofTouchEventArgs & touch) {
-		touchDoubleTap(touch.x, touch.y, touch.id);
+		touchDoubleTap((int)touch.x, (int)touch.y, touch.id);
 	};
 	virtual void touchCancelled(ofTouchEventArgs & touch) {
-		touchCancelled(touch.x, touch.y, touch.id);
+		touchCancelled((int)touch.x, (int)touch.y, touch.id);
 	};
 
 };
