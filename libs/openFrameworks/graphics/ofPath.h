@@ -80,7 +80,7 @@ public:
 	vector<ofPolyline> & getOutline();
 	ofMesh & getTessellation();
 
-	void simplify(float tolerance=0.3);
+	void simplify(float tolerance=0.3f);
 
 	// only needs to be called when path is modified externally
 	void flagShapeChanged();

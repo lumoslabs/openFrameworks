@@ -99,7 +99,7 @@ public:
 		if((bool)forceSmoothing) {
 			float lerpFactor = 1 - forceSmoothing;	
 			if(lerpFactor>1) lerpFactor = 1;
-			else if(lerpFactor < 0.01) lerpFactor = 0.01;
+			else if(lerpFactor < 0.01f) lerpFactor = 0.01f;
 			
 			accelForce += (accelReal - accelForce) * lerpFactor;
 		} else {
@@ -109,7 +109,7 @@ public:
 		if((bool)orientationSmoothing) {
 			float lerpFactor = 1 - orientationSmoothing;	
 			if(lerpFactor>1) lerpFactor = 1;
-			else if(lerpFactor < 0.01) lerpFactor = 0.01;
+			else if(lerpFactor < 0.01f) lerpFactor = 0.01f;
 			
 			accelOrientation += (accelReal - accelOrientation) * lerpFactor;
 		} else {
