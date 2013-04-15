@@ -28,7 +28,11 @@ ifeq ($(findstring Android,$(MAKECMDGOALS)),Android)
 	include $(OF_ROOT)/libs/openFrameworksCompiled/project/android/paths.make
 	ARCH = android
 	ifeq ($(shell uname),Darwin)
-		HOST_PLATFORM = darwin-x86
+		ifeq ($(shell uname -m),x86_64)
+			HOST_PLATFORM = darwin-x86_64
+		else
+			HOST_PLATFORM = darwin-x86
+		endif
 	else ifneq (,$(findstring MINGW32_NT,$(shell uname)))
 		HOST_PLATFORM = windows
 	else
