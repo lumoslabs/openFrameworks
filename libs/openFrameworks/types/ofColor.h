@@ -45,7 +45,7 @@ class ofColor_{
         peachPuff,peru,pink,plum,powderBlue,purple,rosyBrown,royalBlue,saddleBrown,salmon,
         sandyBrown,seaGreen,seaShell,sienna,silver,skyBlue,slateBlue,slateGray,slateGrey,snow,
         springGreen,steelBlue,tan,teal,thistle,tomato,turquoise,violet,wheat,whiteSmoke,
-        yellowGreen;
+        yellowGreen,clearColor;
     
 		void set (float _r, float _g, float _b, float _a = limit());
 		void set (float _gray, float _a = limit());

@@ -148,6 +148,7 @@ template<typename PixelType> const ofColor_<PixelType> ofColor_<PixelType>::viol
 template<typename PixelType> const ofColor_<PixelType> ofColor_<PixelType>::wheat(0.960784*limit(),0.870588*limit(),0.701961*limit());
 template<typename PixelType> const ofColor_<PixelType> ofColor_<PixelType>::whiteSmoke(0.960784*limit(),0.960784*limit(),0.960784*limit());
 template<typename PixelType> const ofColor_<PixelType> ofColor_<PixelType>::yellowGreen(0.603922*limit(),0.803922*limit(),0.196078*limit());
+template<typename PixelType> const ofColor_<PixelType> ofColor_<PixelType>::clearColor( limit(), limit(), limit(), 0);
 
 
 
