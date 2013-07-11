@@ -467,6 +467,22 @@ ofColor ofxUIColorToofColor(UIColor * from){
 	return to;
 }
 
+//--------------------------------------------------------------
+
+CGColorRef ofxColorToCGColorRef(const ofColor & from)
+{
+    return [ ofxColorToUIColor( from ) CGColor ];
+}
+
+//--------------------------------------------------------------
+
+ofColor ofxCGColorRefToofColor(CGColorRef from)
+{
+    return ofxUIColorToofColor( [ UIColor colorWithCGColor:from ] );
+}
+
+//--------------------------------------------------------------
+
 CGRect ofxRectangleToCGRect(const ofRectangle & from){
 	return CGRectMake(from.x, from.y, from.width, from.height);
 }
